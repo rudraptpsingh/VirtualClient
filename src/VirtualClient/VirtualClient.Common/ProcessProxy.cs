@@ -363,6 +363,10 @@ namespace VirtualClient.Common
                 // Expected whenever the CancellationToken receives a cancellation request.
                 // May commonly be an OperationCanceledException or an InvalidOperationException.
             }
+            catch (TimeoutException) when (timeout != null)
+            {
+                // Expected timeout when timeout was specified.
+            }
             finally
             {
                 this.exitTime = DateTime.UtcNow;
