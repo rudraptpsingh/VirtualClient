@@ -12,7 +12,8 @@
         "Duration": "00:05:00",
         "ThreadCount": "{calculate({LogicalCoreCount}/2)}",
         "QueueDepth": "{calculate(512/{ThreadCount})}",
-        "ProcessModel": "SingleProcess"
+        "ProcessModel": "SingleProcess",
+        "PackageBlobName": "diskspd.2.2.0.zip"
     },
     "Actions": [
         {
@@ -382,7 +383,7 @@
             "Parameters": {
                 "Scenario": "InstallDiskSpdPackage",
                 "BlobContainer": "packages",
-                "BlobName": "diskspd.2.0.21.zip",
+                "BlobName": "$.Parameters.PackageBlobName",
                 "PackageName": "diskspd",
                 "Extract": true
             }
